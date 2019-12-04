@@ -3,7 +3,8 @@
 <a href="/">Home</a>
 <h1 class="display-4">Edit this dish!</h1>
 
-<form asp-action="" asp-controller="Home">
+<form asp-action="Update" asp-controller="Home">
+    <input type="hidden" asp-for="DishId">
     <span asp-validation-for="chefsName"></span>
     <label asp-for="chefsName"></label>
     <input asp-for="chefsName">

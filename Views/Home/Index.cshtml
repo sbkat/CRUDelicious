@@ -11,6 +11,6 @@
     <hr>
     @foreach(var dish in Model)
     {
-    <p class="lead"><a href="">@dish.dishName</a> by @dish.chefsName</p>
+    <p class="lead"><a asp-action="Description" asp-route-id="@dish.DishId">@dish.dishName</a> by @dish.chefsName</p>
     }
 </div>

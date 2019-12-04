@@ -9,6 +9,6 @@
 <p class="lead">Calories: @Model.calories</p>
 <p class="lead">Tastiness: @Model.tastiness</p>
 
-<a href="">Delete</a> |
-<a href="/edit">Edit</a>
+<a asp-action="EditDish" asp-route-id="@Model.DishId">Edit</a> |
+<a asp-action="Delete" asp-route-id="@Model.DishId">Delete</a>
 

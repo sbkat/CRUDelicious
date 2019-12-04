@@ -19,7 +19,7 @@ namespace CRUDelicious.Controllers
         [HttpGet("")]
         public IActionResult Index()
         {
-            List<Dish> AllDishes = dbContext.Dish.ToList();
+            List<Dish> AllDishes = dbContext.Dish.OrderByDescending(dish => dish.DishId).ToList();
             return View(AllDishes);
         }
         [HttpGet("new")]
@@ -41,15 +41,41 @@ namespace CRUDelicious.Controllers
                 return View("New");
             }
         }
-        [HttpGet("description")]
-        public IActionResult Description()
+        [HttpGet("{id}")]
+        public IActionResult Description(int? id)
         {
-            return View();
+            Dish oneDish = dbContext.Dish.FirstOrDefault(dish => dish.DishId == id);
+            return View(oneDish);
         }
-        [HttpGet("edit")]
-        public IActionResult EditDish()
+        [HttpGet("edit/{id}")]
+        public IActionResult EditDish(int? id)
         {
-            return View();
+            Dish editDish = dbContext.Dish.FirstOrDefault(dish => dish.DishId == id);
+     
+            return View(editDish);
+        }
+        [HttpPost("update")]
+        public IActionResult Update(int? id, [Bind] Dish updateDish)
+        {
+            if(ModelState.IsValid)
+            {
+                dbContext.Dish.Update(updateDish);
+                dbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("EditDish");
+            }
+        }
+        public IActionResult Delete(int? id)
+        {
+            Dish oneDish = dbContext.Dish.FirstOrDefault(dish => dish.DishId == id);
+    
+            dbContext.Dish.Remove(oneDish);
+            
+            dbContext.SaveChanges();
+            return RedirectToAction("Index");
         }
 
 
