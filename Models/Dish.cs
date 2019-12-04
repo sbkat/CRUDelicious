@@ -15,9 +15,11 @@ namespace CRUDelicious.Models
         public string dishName { get; set; }
         [Display (Name="Calories: ")]
         [Required (ErrorMessage = "Amount of caloires is required.")]
+        [CaloriesGreaterThanZero]
         public int calories { get; set; }
         [Display (Name="Tastiness: ")]
         [Required (ErrorMessage = "Tasty rating is required.")]
+        [Range(1, 5, ErrorMessage = "Please enter a rating between 1 and 5.")]
         public int tastiness { get; set; }
         [Display (Name="Description: ")]
         [Required (ErrorMessage = "A description is required.")]
