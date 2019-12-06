@@ -7,8 +7,15 @@
     <span asp-validation-for="@Model.Dish.dishName"></span>
     <label asp-for="@Model.Dish.dishName"></label>
     <input asp-for="@Model.Dish.dishName">
-
-    <!-- select option with chef names -->
+    
+    <span asp-validation-for="@Model.Dish.chefId"></span>
+    <label asp-for="@Model.Dish.chefId"></label>
+    <select asp-for="@Model.Dish.chefId">
+        @foreach(var chef in Model.SelectChef)
+        {
+            <option value="@chef.chefId">@chef.firstName @chef.lastName</option>
+        }
+    </select>
 
     <span asp-validation-for="@Model.Dish.calories"></span>
     <label asp-for="@Model.Dish.calories"></label>

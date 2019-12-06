@@ -28,7 +28,6 @@ C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\bin\Debug\netcorea
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\bin\Debug\netcoreapp2.2\CRUDelicious.Views.pdb
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\CRUDelicious.Views.pdb
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\CRUDelicious.csproj.CopyComplete
-C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\Description.g.cshtml.cs
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\EditDish.g.cshtml.cs
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\Dishes.g.cshtml.cs
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\NewChef.g.cshtml.cs

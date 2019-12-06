@@ -2986,11 +2986,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Kathy\\Desktop\\Coding\\Coding Dojo\\csharp\\CRUDelicious\\Views\\Home\\Description.cshtml",
-      "TargetPath": "Views\\Home\\Description.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Kathy\\Desktop\\Coding\\Coding Dojo\\csharp\\CRUDelicious\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"

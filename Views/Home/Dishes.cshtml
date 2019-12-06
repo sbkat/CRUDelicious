@@ -17,18 +17,23 @@
                 <th scope="col">Chef</th>
                 <th scope="col">Tastiness</th>
                 <th scope="col">Calories</th>
+
             </tr>
         </thead>
         <tbody>
-            <tr>
-                @foreach(var dish in Model)
+            @foreach(var dish in Model)
                 {
-                    <td>@dish.Chef.firstName @dish.Chef.lastName</td>
+            <tr>
                     <td>@dish.dishName</td>
+                    <td>@dish.Chef.firstName @dish.Chef.lastName</td>
                     <td>@dish.tastiness</td>
                     <td>@dish.calories</td>
-                }
+                    <td>
+                        <a asp-action="EditDish" asp-route-id="@dish.DishId">Edit Dish</a> |
+                        <a asp-action="Delete" asp-route-id="@dish.DishId">Delete</a>   
+                    </td>
             </tr>
+                }
         </tbody>
     </table>
 

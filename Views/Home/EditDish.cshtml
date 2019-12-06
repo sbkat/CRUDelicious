@@ -1,0 +1,39 @@
+@model AddDishViewModel
+
+<a href="/">Home</a>
+<h1 class="display-4">Add a new dish!</h1>
+
+<form asp-action="Update" asp-controller="Home" asp-route-id="@Model.Dish.DishId" method="post">
+    <span asp-validation-for="@Model.Dish.dishName"></span>
+    <label asp-for="@Model.Dish.dishName"></label>
+    <input asp-for="@Model.Dish.dishName">
+    
+    <span asp-validation-for="@Model.Dish.chefId"></span>
+    <label asp-for="@Model.Dish.chefId"></label>
+    <select asp-for="@Model.Dish.chefId">
+        @foreach(var chef in Model.SelectChef)
+        {
+            <option value="@chef.chefId">@chef.firstName @chef.lastName</option>
+        }
+    </select>
+
+    <span asp-validation-for="@Model.Dish.calories"></span>
+    <label asp-for="@Model.Dish.calories"></label>
+    <input asp-for="@Model.Dish.calories">
+
+    <span asp-validation-for="@Model.Dish.tastiness"></span>
+    <label asp-for="@Model.Dish.tastiness"></label>
+    <select asp-for="@Model.Dish.tastiness">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+    <span asp-validation-for="@Model.Dish.description"></span>
+    <label asp-for="@Model.Dish.description"></label>
+    <textarea asp-for="@Model.Dish.description"></textarea>
+
+    <button>Edit dish</button>
+</form>

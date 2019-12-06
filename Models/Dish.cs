@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CRUDelicious.Models
 {
@@ -22,6 +23,8 @@ namespace CRUDelicious.Models
         [Display (Name="Description: ")]
         [Required (ErrorMessage = "A description is required.")]
         public string description { get; set; }
+        [Display (Name="Chef: ")]
+        [ForeignKey("chefId")]
         public int chefId { get; set; }
         //navigation property
         public Chef Chef { get; set; }

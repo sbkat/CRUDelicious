@@ -48,67 +48,63 @@ namespace CRUDelicious.Controllers
         [HttpGet("dishes")]
         public IActionResult Dishes()
         {
-            List<Dish> AllDishes = dbContext.Dishes.OrderByDescending(dish => dish.DishId).ToList();
+            List<Dish> AllDishes = dbContext.Dishes.Include(dish => dish.Chef).OrderByDescending(dish => dish.CreatedAt).ToList();
             return View(AllDishes);
         }
         [HttpGet("newDish")]
         public IActionResult NewDish()
         {
-            return View();
+            List<Chef> allChefs = dbContext.Chefs.ToList();
+            return View(new AddDishViewModel{SelectChef = allChefs});
         }
         [HttpPost("AddDish")]
-        public IActionResult AddDish(Dish newDish)
+        public IActionResult AddDish(AddDishViewModel newDish)
         {
             if(ModelState.IsValid)
             {
-                dbContext.Add(newDish);
+                Chef chef = dbContext.Chefs.FirstOrDefault(c => c.chefId == newDish.chefId);
+                newDish.Dish.Chef = chef;
+                dbContext.Add(newDish.Dish);
                 dbContext.SaveChanges();
                 return RedirectToAction("Dishes");
             }
             else
             {
-                return View("NewDish");
+                List<Chef> allChefs = dbContext.Chefs.ToList();
+                return View("NewDish", new AddDishViewModel{SelectChef = allChefs});
             }
         }
-
-
-        // CRUDelicious edit/update/delete
-        // [HttpGet("{id}")]
-        // public IActionResult Description(int? id)
-        // {
-        //     Dish oneDish = dbContext.Dishes.FirstOrDefault(dish => dish.DishId == id);
-        //     return View(oneDish);
-        // }
-        // [HttpGet("edit/{id}")]
-        // public IActionResult EditDish(int? id)
-        // {
-        //     Dish editDish = dbContext.Dishes.FirstOrDefault(dish => dish.DishId == id);
-     
-        //     return View(editDish);
-        // }
-        // [HttpPost("update")]
-        // public IActionResult Update(int? id, [Bind] Dish updateDish)
-        // {
-        //     if(ModelState.IsValid)
-        //     {
-        //         dbContext.Dishes.Update(updateDish);
-        //         dbContext.SaveChanges();
-        //         return RedirectToAction("Index");
-        //     }
-        //     else
-        //     {
-        //         return View("EditDish");
-        //     }
-        // }
-        // public IActionResult Delete(int? id)
-        // {
-        //     Dish oneDish = dbContext.Dishes.FirstOrDefault(dish => dish.DishId == id);
-    
-        //     dbContext.Dishes.Remove(oneDish);
-            
-        //     dbContext.SaveChanges();
-        //     return RedirectToAction("Index");
-        // }
+        [HttpGet("edit/{id}")]
+        public IActionResult EditDish(int? id)
+        {
+            Dish editDish = dbContext.Dishes.FirstOrDefault(dish => dish.DishId == id);
+            List<Chef> allChefs = dbContext.Chefs.ToList();
+            return View(new AddDishViewModel{Dish = editDish, SelectChef = allChefs});
+        }
+        [HttpPost("update/{id}")]
+        public IActionResult Update(int? id, [Bind] AddDishViewModel updateDish)
+        {
+            if(ModelState.IsValid)
+            {
+                Dish editDish = dbContext.Dishes.FirstOrDefault(dish => dish.DishId == id);
+                editDish = updateDish.Dish;
+                editDish.UpdatedAt = DateTime.Now;
+                dbContext.Dishes.Update(editDish);
+                dbContext.SaveChanges();
+                return RedirectToAction("Dishes");
+            }
+            else
+            {
+                return View("EditDish");
+            }
+        }
+        public IActionResult Delete(int? id)
+        {
+            Dish oneDish = dbContext.Dishes.FirstOrDefault(dish => dish.DishId == id);
+            dbContext.Dishes.Remove(oneDish);
+            dbContext.SaveChanges();
+            return RedirectToAction("Dishes");
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
