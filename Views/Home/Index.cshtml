@@ -1,16 +1,34 @@
-﻿@model List<Dish>
+﻿@model List<Chef>
 
 @{
-    ViewData["Title"] = "CRUDelicious";
+    ViewData["Title"] = "Chefs 'N Dishes";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to CRUDelicious</h1>
-    <p class="lead">Check out some recent dishes!</p>
-    <a href="/new">Add A Dish</a>
+    <h1 class="display-4">
+        <a href="/">Chefs</a> |
+        <a href="/dishes">Dishes</a>
+    </h1>
+    <p class="lead">Check out our roster of Chefs!</p>
+    <a href="/newChef">Add A Chef</a>
     <hr>
-    @foreach(var dish in Model)
-    {
-    <p class="lead"><a asp-action="Description" asp-route-id="@dish.DishId">@dish.dishName</a> by @dish.chefsName</p>
-    }
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col"># of Dishes</th>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach(var Chef in Model)
+                {
+            <tr>
+                    <td>@Chef.firstName @Chef.lastName</td>
+                    <td>@(DateTime.Now.Year-Chef.dateOfBirth.Year)</td>
+                    <td>@Chef.CreatedDishes.Count</td>
+            </tr>
+                }
+        </tbody>
+    </table>
 </div>

@@ -10,7 +10,6 @@ C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcorea
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\CRUDelicious.dll
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\CRUDelicious.pdb
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\New.g.cshtml.cs
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
@@ -31,3 +30,6 @@ C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcorea
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\CRUDelicious.csproj.CopyComplete
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\Description.g.cshtml.cs
 C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\EditDish.g.cshtml.cs
+C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\Dishes.g.cshtml.cs
+C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\NewChef.g.cshtml.cs
+C:\Users\Kathy\Desktop\Coding\Coding Dojo\csharp\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\NewDish.g.cshtml.cs
